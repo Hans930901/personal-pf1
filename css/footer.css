@@ -7,10 +7,8 @@ footer {
 footer .wrap{
   display: flex;
   justify-content: space-between;
-  width: 70%;
   flex-direction: column;
-  position: relative;
-  height: 70%;
+  max-width: 1300px;
 }
 footer .wrap h1 {  
   font-weight: bolder;
@@ -21,20 +19,18 @@ footer .wrap h1 span {
   
 }
 footer .wrap .affiliated {
-
+  position: relative;
 }
 footer .wrap .affiliated a {
   background: gray;
   padding: 14px;
   color: white;
   border-radius: 10px;
-  background-repeat: no-repeat;
-  background-position: center;
   font-size: 13px;
   transition: 0.3s;
   position: absolute;
   right: 10px;
-  top: 0px;
+  top: -60px;
 }
 footer .wrap .affiliated a:hover{
   background: black

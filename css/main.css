@@ -47,17 +47,14 @@ main{
   background-color: #f9f9f9;
 }
 #service .wrap {
-  display: flex;
-  justify-content: space-around;
-}
-#service .wrap{
-  width: 70%;
+  max-width: 1300px;
+  height: 960px;
+  padding: 0 90px;
 }
 #service .wrap .leftbox{
+  padding: 210px 0;
   width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  float: left;
 }
 #service .wrap .leftbox h2{
   color: gray;
@@ -74,7 +71,6 @@ main{
   margin: 10%;
   padding: 20px 40px;
   border-radius: 40px;
-  width: 25%;
   color: white;
   margin-left: 0;
   transition: 0.3s;
@@ -83,34 +79,42 @@ main{
   background: #117ce9;
 }
 #service .wrap .rightbox{
-  display: flex;
-  gap: 2%;
+  width: 44%;
+  float: right;
+  text-align: right;
 }
 #service .wrap .rightbox ul.left{
-  text-align: end;
+  display: inline-block;
+  width: 40%;
+  margin-right: 3%;
 }
 #service .wrap .rightbox ul.left li{
-
+  margin-top: 5%;
+  width: 100%;
 }
 #service .wrap .rightbox ul.left li .pc{  
-  margin: 3px;
+  width: 100%;
+  border-radius: 24px;
 }
-#service .wrap .rightbox ul.right{
-  margin-top: 120px;
+#service .wrap .rightbox ul.right{  
+  display: inline-block;
+  width: 40%;
+  margin-right: 3%;
 }
 #service .wrap .rightbox ul.right li{
-
+  margin-top: 5%;
+  width: 100%;
 }
 #service .wrap .rightbox ul.right li .pc{  
-  margin: 3px;
+  width: 100%;
+  border-radius: 24px;
 }
 /* 소식영역 */
 #news{
   margin-top: 5%;
-  min-height: 80vh;
 }
 #news .wrap{
-  width: 70%;
+  max-width: 1300px;
 }
 #news .wrap h2{
   margin-bottom: 3%;
@@ -121,9 +125,10 @@ main{
 }
 #news .wrap .top{
   display: flex;
-  gap: 3%;
+  gap: 20px;
 }
 #news .wrap .top li{
+  
 }
 #news .wrap .top li a{
 
@@ -131,8 +136,7 @@ main{
 #news .wrap .top li a .box{
   
 }
-#news .wrap .top li a .box:hover{
-  
+#news .wrap .top li a .box:hover{  
   background: white;
 }
 #news .wrap .top li a .box p{  
@@ -140,6 +144,7 @@ main{
   font-size: 18px;
   color: black;
   transition: 0.3s;
+  word-break: keep-all;
 }
 #news .wrap .top li a .box:hover p{
   color: #117ce9;
@@ -152,7 +157,7 @@ main{
   border-radius: 24px;
 }
 #news .wrap > a{  
-  display: inline-block;
+  display: block;
   text-align: center;
   margin: 6% 42%;
   padding: 20px 40px;
@@ -194,10 +199,9 @@ main{
   position: absolute;
   display: inline-block;
   text-align: center;
-  line-height: 48px;
   right: 29px;
   bottom: 27px;
-  padding: 0 33px;
+  padding: 18px 33px;
   background-color: black;
   border-radius: 40px;
   color: white;
