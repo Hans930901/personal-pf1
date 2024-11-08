@@ -1,0 +1,35 @@
+@media screen and (max-width: 1200px){
+/*  common  */
+  .t1 {
+    font-size: calc(42px * 0.8);
+  }
+/*   header   */
+  header nav{    
+    padding: 0 30px;
+    height: 70px;
+  }
+  header nav div.nav h1 a{    
+    font-size: calc(25px * 0.9);
+  }
+  header nav div.nav ul{
+    display: none;
+  }
+  header nav ul.enb{    
+    margin: 0 9px;
+    transform: scale(0.85);
+  }
+  #title .wrap h2{
+    font-size: calc(50px * 0.8);
+    padding: 20px 30px;
+  }
+  #title .wrap a{    
+    margin: 0 30px;
+    width: calc(160px * 0.8);
+  }
+  #title .video video{
+    object-fit: cover;
+    height: 100vh;
+  }
+@media screen and (max-width: 768px){
+    
+}

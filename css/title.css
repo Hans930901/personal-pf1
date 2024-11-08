@@ -1,0 +1,59 @@
+#title{  
+  height: 100vh;
+  position: relative;
+  display: flex;
+}
+#title::after{
+  content: "";
+  width: 45px;
+  height: 60px;
+  background: url(https://www.navercloudcorp.com/static/images/down_arrow_w.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 50px;
+  left: calc(50% - 22.5px);
+  animation-name: updown;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes updown{
+  from{ /* 애니메이션 시작 */
+    transform: translateY(0px);
+  }
+  to{ /* 애니메이션 끝 */
+    transform: translateY(20px);
+  }  
+}
+#title .wrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 1600px;
+}
+#title .wrap h2 {  
+  color: white;
+  font-size: 50px;
+  margin-top: 4%;
+  font-weight: bold;
+}
+#title .wrap a{  
+  text-align: center;
+  border-radius: 40px;
+  color: white;
+  border: 1px solid dimgrey;
+  font-size: 13px;
+  width: 160px;
+  margin-top: 2%;
+  padding: 15px;
+}
+#title .wrap a:hover{  
+  border-color: white;
+}
+#title .video {  
+  position: absolute;
+  z-index: -1;
+}
+#title .video video {  
+}

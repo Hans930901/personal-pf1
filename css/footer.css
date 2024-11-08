@@ -1,0 +1,96 @@
+footer {  
+  height: auto;
+  margin: 2% auto 2%;
+  background-color: #f9f9f9;
+  padding-top: 3%;
+}
+footer .wrap{
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  flex-direction: column;
+  position: relative;
+  height: 70%;
+}
+footer .wrap h1 {  
+  font-weight: bolder;
+  font-size: 25px;
+  margin-bottom: 2%;
+}
+footer .wrap h1 span {
+  
+}
+footer .wrap .affiliated {
+
+}
+footer .wrap .affiliated a {
+  background: gray;
+  padding: 14px;
+  color: white;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 13px;
+  transition: 0.3s;
+  position: absolute;
+  right: 10px;
+  top: 0px;
+}
+footer .wrap .affiliated a:hover{
+  background: black
+}
+footer .wrap .affiliated a::after{
+  content: "";
+  padding: 10px;
+  background: url(https://www.navercloudcorp.com/static/images/footer_open.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-left: 5px;
+}
+footer .company {  
+  color: gray;
+}
+footer .company p {  
+  font-size: 12px;
+  line-height: 25px;
+  font-weight: 700;
+}
+footer .company p span {
+  
+}
+footer .company .en {  
+  font-size: 14px;
+  line-height: 40px;
+}
+footer .wrap .li{  
+  display: flex;
+  align-items: center;
+}
+footer .conditions {  
+  width: 25%;
+  font-size: 14px;
+}
+footer .conditions a {  
+  color: gray;
+  margin-right: 5%;
+  line-height: 5;
+  transition: 0.3s;
+}
+footer .conditions a:hover:nth-child(1){
+  color: #117ce9;
+}
+footer .conditions .txt {  
+  text-decoration: underline;
+  color: black;
+}
+footer .sns {  
+  font-size: 14px;
+}
+footer .sns a {  
+  color: gray;
+  margin-right: 30px;
+  transition: 0.3s;
+}
+footer .sns a:hover{
+  color: #117ce9;
+}

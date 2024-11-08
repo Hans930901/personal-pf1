@@ -1,0 +1,75 @@
+header {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: transparent;
+  transition: 0.3s;
+}
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+header nav div.nav{
+  display: flex;
+  justify-content: space-between;
+  width: 1500px;
+}
+header nav div.nav h1 {
+  font-weight: bolder;
+}
+header nav div.nav h1 a {
+  color: white;
+  font-size: 25px;
+}
+header nav div.nav ul {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+header nav ul {
+  margin-left: 70px;
+}
+header nav ul li {
+  
+}
+header nav ul li a {
+  color: white;
+}
+header nav ul.gnb {
+
+}
+header nav ul.gnb li {
+  
+}
+header nav ul.gnb li a {
+  transition: 0.3s;
+}
+header nav ul.gnb li a:hover {
+  color: #117ce9;
+}
+header nav ul.enb {
+
+}
+header nav ul.enb li {
+  background-image: url(../img/png/global.png);
+  background-size: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+header nav ul.enb li:hover {
+  background-image: url(https://www.navercloudcorp.com/static/images/global_icon_g.png);
+  background-size: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+header nav ul.enb li a {
+  font-size: 0;
+  display: block;
+  width: 30px;
+  height: 30px;
+}

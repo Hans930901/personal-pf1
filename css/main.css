@@ -1,0 +1,212 @@
+main{    
+  height: auto;
+  min-height: 100vh;
+}
+/* 리포트영역 */
+#report {  
+}
+#report .wrap {  
+  text-align: center;
+}
+#report .wrap h2 {  
+  text-align: center;
+  padding-top: 5%;
+  color: #aaa;
+  display: inline-block;
+  margin: 5%;
+}
+#report .wrap h2 span {  
+  color: #222;
+}
+#report .wrap h2 a {
+  background-color: black;
+  display: inline-block;
+  margin: 6%;
+  padding: 20px 40px;
+  font-size: 15px;
+  border-radius: 50px;
+  color: white;
+  transition: 0.3s;
+}
+#report .wrap h2 a:hover {  
+  background-color: #117ce9;
+}
+#report .wrap h2::after {
+    content: "";
+    background-image: url(https://www.navercloudcorp.com/static/images/hyperscale_ai.png);
+    display: inline-block;
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 800px;
+    margin-top: 100px;
+}
+/* 서비스영역 */
+#service {
+  background-color: #f9f9f9;
+}
+#service .wrap {
+  display: flex;
+  justify-content: space-around;
+}
+#service .wrap{
+  width: 70%;
+}
+#service .wrap .leftbox{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#service .wrap .leftbox h2{
+  color: gray;
+}
+#service .wrap .leftbox h2 span{
+  color: black;
+}
+#service .wrap .leftbox h2 span span{
+  color: gray;
+}
+#service .wrap .leftbox a {
+  display: inline-block;
+  background-color: black;
+  margin: 10%;
+  padding: 20px 40px;
+  border-radius: 40px;
+  width: 25%;
+  color: white;
+  margin-left: 0;
+  transition: 0.3s;
+}
+#service .wrap .leftbox a:hover{  
+  background: #117ce9;
+}
+#service .wrap .rightbox{
+  display: flex;
+  gap: 2%;
+}
+#service .wrap .rightbox ul.left{
+  text-align: end;
+}
+#service .wrap .rightbox ul.left li{
+
+}
+#service .wrap .rightbox ul.left li .pc{  
+  margin: 3px;
+}
+#service .wrap .rightbox ul.right{
+  margin-top: 120px;
+}
+#service .wrap .rightbox ul.right li{
+
+}
+#service .wrap .rightbox ul.right li .pc{  
+  margin: 3px;
+}
+/* 소식영역 */
+#news{
+  margin-top: 5%;
+  min-height: 80vh;
+}
+#news .wrap{
+  width: 70%;
+}
+#news .wrap h2{
+  margin-bottom: 3%;
+  color: gray;
+}
+#news .wrap h2 span{  
+  color: black;
+}
+#news .wrap .top{
+  display: flex;
+  gap: 3%;
+}
+#news .wrap .top li{
+}
+#news .wrap .top li a{
+
+}
+#news .wrap .top li a .box{
+  
+}
+#news .wrap .top li a .box:hover{
+  
+  background: white;
+}
+#news .wrap .top li a .box p{  
+  margin: 20px 0;
+  font-size: 18px;
+  color: black;
+  transition: 0.3s;
+}
+#news .wrap .top li a .box:hover p{
+  color: #117ce9;
+}
+#news .wrap .top li a .box span{  
+  font-size: 15px;
+  color: gray;
+}
+#news .wrap .top li a .box img{  
+  border-radius: 24px;
+}
+#news .wrap > a{  
+  display: inline-block;
+  text-align: center;
+  margin: 6% 42%;
+  padding: 20px 40px;
+  border: 1px solid;
+  border-radius: 40px;
+  color: black;
+  transition: 0.3s;
+}
+#news .wrap > a:hover{  
+  color: white;
+  background: #117ce9;
+}
+#news .wrap .bottom{
+  display: flex;
+  gap: 2%;
+}
+#news .wrap .bottom li{  
+  background: #117ce9;
+  width: calc(50% - 16px);
+  padding: 2%;
+  border-radius: 15px;
+  position: relative;
+}
+#news .wrap .bottom li:nth-child(2){  
+  background-color: #07b4eb;
+}
+#news .wrap .bottom li h3{  
+  margin-bottom: 2%;
+  color: white;
+  font-weight: bold;
+}
+#news .wrap .bottom li p{  
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 30px;
+}
+#news .wrap .bottom li a{
+  position: absolute;
+  display: inline-block;
+  text-align: center;
+  line-height: 48px;
+  right: 29px;
+  bottom: 27px;
+  padding: 0 33px;
+  background-color: black;
+  border-radius: 40px;
+  color: white;
+  transition: 0.3s;
+}
+#news .wrap .bottom li a:hover{
+  background: white;
+  color: black;
+}
+#news .wrap .bottom li p span{
+  
+}

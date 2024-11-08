@@ -1,0 +1,24 @@
+body{
+    width: auto;
+    height: auto;
+    font-family: 'Pretendard' , sans-serif;
+    font-weight: 700;
+    color: black;
+    background: white;
+}
+.block{
+    display: block;    
+}
+.wrap{    
+    max-width: 1600px;
+    margin: 0 auto;
+}
+section{
+}
+.line{
+    line-height: 1.4;
+}
+.t1{
+    font-size: 42px;
+    font-weight: bold;
+}
