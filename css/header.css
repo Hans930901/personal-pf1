@@ -1,3 +1,6 @@
+.navColor{
+  background-color: white;
+}
 header {
   width: 100%;
   height: auto;
@@ -25,10 +28,14 @@ header nav div.nav h1 {
 header nav div.nav h1 a {
   color: white;
   font-size: 25px;
+  line-height: 2;
+}
+.navColor nav div.nav h1 a{
+  color: black;
 }
 header nav div.nav ul {
   display: flex;
-  gap: 40px;
+  gap: 30px;
   align-items: center;
 }
 header nav ul {
@@ -44,10 +51,35 @@ header nav ul.gnb {
 
 }
 header nav ul.gnb li {
-  
+  padding: 0px 5px;
+}
+header nav ul.gnb li:nth-of-type(n+4) {
+  padding: 0;
 }
 header nav ul.gnb li a {
   transition: 0.3s;
+}
+header nav ul.gnb li:nth-of-type(n+4) a{
+  line-height: 2;
+}
+header nav ul.gnb li a i{
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  transition: 0.3s;
+  opacity: 0;
+  text-indent: -9999px;
+}
+header nav ul.gnb li a:hover i{
+  background-image: url('../img/png/outlink_icon.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  line-height: 1.4;
+}
+.navColor nav ul.gnb li a{
+  color: darkgrey;
 }
 header nav ul.gnb li a:hover {
   color: #117ce9;
@@ -56,20 +88,23 @@ header nav ul.enb {
 
 }
 header nav ul.enb li {
-  background-image: url(../img/png/global.png);
-  background-size: 30px;
+  background-image: url(../img/png/global_icon_w.png);
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
+.navColor nav ul.enb li {
+  background-image: url(../img/png/global_icon_b.png);
+}
 header nav ul.enb li:hover {
-  background-image: url(https://www.navercloudcorp.com/static/images/global_icon_g.png);
-  background-size: 30px;
+  background-image: url(../img/png/global_icon_g.png);
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 header nav ul.enb li a {
   font-size: 0;
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
 }

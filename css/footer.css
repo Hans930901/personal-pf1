@@ -38,7 +38,7 @@ footer .wrap .affiliated a:hover{
 footer .wrap .affiliated a::after{
   content: "";
   padding: 10px;
-  background: url(https://www.navercloudcorp.com/static/images/footer_open.png);
+  background-image: url(../img/png/footer_open.png);
   background-position: center;
   background-repeat: no-repeat;
   margin-left: 5px;

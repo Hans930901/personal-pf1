@@ -1,0 +1,18 @@
+.ham{
+    font-size: 0;
+    width: 25px;
+    height: 20px;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    box-sizing: border-box;
+    transition: 1s;
+    color: white;
+    display: none;
+    align-items: center;
+}
+.ham::before{
+    content: "";
+    display: block;
+    width: 100%;
+    border-top: 2px solid;
+}
