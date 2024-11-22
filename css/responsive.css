@@ -26,6 +26,7 @@
   }
   #title .wrap a{    
     margin: 0 30px;
+    padding: 12px 40px;
   }
   #title .video video{
     object-fit: cover;

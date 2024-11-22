@@ -113,7 +113,7 @@ main{
 }
 /* 소식영역 */
 #news{
-  margin-top: 5%;
+  padding-top: 120px;
 }
 #news .wrap{
   max-width: 1300px;

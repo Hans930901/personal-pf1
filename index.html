@@ -12,25 +12,112 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/responsive.css">
+    
     <!-- FAVICON -->
     <link rel="icon" href="./img/ico/navercloud_favicon.ico">
+
     <!-- jQuery -->
     <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
 
     <script>
-        $(document).ready(function(){
-            $(window).scroll(function(){
-                var scrollPosition = $(window).scrollTop();
-                if (scrollPosition > $(window).height()) {
-                $("header").addClass("navColor");
-                }
-                else {
-                $("header").removeClass("navColor");
+        $(document).ready(function() {
+        $(window).scroll(function() {
+            var scrollPosition = $(window).scrollTop();  // 현재 스크롤 위치
+            var reportOffset = $("#report").offset().top; // #report 섹션의 시작 위치
+
+            // 스크롤이 #report 섹션에 도달하면 navColor 클래스 추가
+                if (scrollPosition >= reportOffset) {
+                    $("header").addClass("navColor");
+                } else {
+                    $("header").removeClass("navColor");
                 }
             });
         });
     </script>
+    
+    <script>
+        window.onload = function () {
+        var elm = ".full";
+        // 화면 크기 확인
+        function handleResize() {
+            var windowWidth = $(window).width();
 
+            // 화면 크기가 특정 너비 이상일 때만 실행
+            if (windowWidth > 768) { // 예시로 768px 이상일 때만 실행
+                $("section").unwrap("main");
+                $("section").addClass("full");
+                $("#title").addClass("full");
+                $("section").css("height", "100vh"); // 섹션의 높이를 화면 크기와 동일하게 설정
+            } else {
+                // 작은 화면에서는 스타일이나 기능을 원래대로 돌려놓거나 비활성화
+                $("section").unwrap("main");
+                $("section").removeClass("full");
+                $("#title").removeClass("full");
+                $("section").css("height", "auto"); // 작은 화면에서는 섹션의 높이를 자동으로 설정
+            }
+        }
+
+        // 초기 화면 크기 체크
+        handleResize();
+
+        // 화면 크기 변화 시, 다시 체크
+        $(window).resize(function () {
+            handleResize();
+        });
+
+        $(elm).each(function (index) {
+            // 개별적으로 Wheel 이벤트 적용
+            $(this).on("mousewheel DOMMouseScroll", function (e) {
+                e.preventDefault();
+                var delta = 0;
+                if (!event) event = window.event;
+                if (event.wheelDelta) {
+                    delta = event.wheelDelta / 120;
+                    if (window.opera) delta = -delta;
+                }
+                else if (event.detail) {
+                    delta = -event.detail / 3;
+                }
+
+                var moveTop = $(window).scrollTop(); // 현재 스크롤 위치
+                var elmSelecter = $(elm).eq(index);  // 현재 선택된 섹션
+
+                // 마우스휠을 위에서 아래로
+                if (delta < 0) {
+                    if ($(elmSelecter).next().length > 0) {
+                        try {
+                            moveTop = $(elmSelecter).next().offset().top; // 다음 섹션으로 이동
+                        }
+                        catch (e) {}
+                    }
+                }
+                // 마우스휠을 아래에서 위로
+                else {
+                    if ($(elmSelecter).prev().length > 0) {
+                        try {
+                            // footer가 화면 맨 아래에 있을 때, 뉴스 섹션으로 이동하도록 처리
+                            if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
+                                moveTop = $('#news').offset().top; // news로 이동
+                            }
+                            else {
+                                moveTop = $(elmSelecter).prev().offset().top; // 이전 섹션으로 이동
+                            }
+                        } catch (e) {}
+                    }
+                }
+
+                // 화면 이동 0.8초(800ms)
+                $("html, body").stop().animate({
+                    scrollTop: moveTop + 'px'
+                }, {
+                    duration: 800, complete: function () {
+                        // 애니메이션 완료 후 추가 동작이 있을 경우 넣을 수 있음
+                    }
+                });
+            });
+        });
+    }
+    </script>
 </head>
 <body>
     <!-- 상단영역 -->
@@ -58,24 +145,24 @@
         </nav>
     </header>
 
-    <div class="pc">
-        <!-- 타이틀영역 -->
-        <div class="section" id="title">
-            <div class="wrap">
-                <h2 class="line">
-                    새로워진 클로바 사이트에서
-                    <br>
-                    AI 기술 소식을 가장 빠르게
-                </h2>
-                <a href="">자세히 보기</a>
-            </div>
-            <div class="video">
-                <video width="100%" muted="" loop="" autoplay="" src="./img/video/home_main_clova.mp4"></video>
-            </div>
+    <!-- 타이틀영역 -->
+    <div id="title">
+        <div class="wrap">
+            <h2 class="line">
+                새로워진 클로바 사이트에서
+                <br>
+                AI 기술 소식을 가장 빠르게
+            </h2>
+            <a href="">자세히 보기</a>
         </div>
+        <div class="video">
+            <video width="100%" muted="" loop="" autoplay="" src="./img/video/home_main_clova.mp4"></video>
+        </div>
+    </div>
 
-        <!-- 메인영역 -->
-        <div class="section" id="report">
+    <!-- 메인영역 -->
+    <main>
+        <section id="report">
             <div class="wrap">
                 <h2 class="line t1">
                     네이버클라우드가 더 큰 성장을 위한
@@ -83,9 +170,9 @@
                     <a href="">소개 바로가기</a>
                 </h2>
             </div>
-        </div>
+        </section>
 
-        <div class="section" id="service">
+        <section id="service">
             <div class="wrap">
                 <div class="leftbox">
                     <h2 class="line t1">네이버클라우드는
@@ -140,56 +227,56 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="section" id="news">
+        <section id="news">
             <div class="wrap">
                 <h2 class="line t1">네이버클라우드의<span class="block"></span><span>새로운 소식</span>을 만나 보세요</h2>
                 <ul class="top">
-                    <li>
-                        <a href="">
-                            <div class="box">
-                                <img src="./img/png/20241018102844_1.png" width="100%" alt="“보험업계 디지털 혁신 함께한다” 네이버클라우드와 삼성생명, 디지털 금융혁신 파트너로 뭉쳤다! 이미지">
-                                <p>
-                                    네이버클라우드, 보안·맞춤 기능 강화한 기업용 '클로바노트' 출시
-                                </p>
-                                <span>2024.10.18</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="box">
-                                <img src="./img/png/20241017155658_1.png" width="100%" alt="네이버클라우드, 'NH 퍼블릭 클라우드 표준 사업자' 선정… “금융권 클라우드 강자 재확인” 이미지">
-                                <p>
-                                    네이버클라우드, "AI 디지털교과서 성공 위해 맞춤형 학습 가능한 혁신 기술 지원할 것"
-                                </p>
-                                <span>2024.10.17</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="box">
-                                <img src="./img/png/20240927102708_1.png" width="100%" alt="네이버클라우드가 알려주는 ‘더 똑똑하게 일하는 법’, ‘오피스 구석 1열’ 토크쇼 개최 이미지">
-                                <p>
-                                    “이제 업무용 번역 도구로 파파고를 활용해보세요” AI 번역 서비스 파파고, 비즈니스용 유료 구독형 버전 ‘파파고 플러스’ 출시
-                                </p>
-                                <span>2024.09.27</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <div class="box">
-                                <img src="./img/png/20240927100022_1.png" width="100%" alt="네이버클라우드-매직에코, 클라우드 기반의 ‘올인원 교육 서비스’ 함께 제공한다 이미지">
-                                <p>
-                                    네이버클라우드 컨소시엄,  ‘AI반도체 Farm 구축 및 실증’ 2차년도 사업 순항
-                                </p>
-                                <span>2024.09.27</span>
-                            </div>
-                        </a>
-                    </li>
+                        <li>
+                            <a href="">
+                                <div class="box">
+                                    <img src="./img/png/20241018102844_1.png" width="100%" alt="“보험업계 디지털 혁신 함께한다” 네이버클라우드와 삼성생명, 디지털 금융혁신 파트너로 뭉쳤다! 이미지">
+                                    <p>
+                                        네이버클라우드, 보안·맞춤 기능 강화한 기업용 '클로바노트' 출시
+                                    </p>
+                                    <span>2024.10.18</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="box">
+                                    <img src="./img/png/20241017155658_1.png" width="100%" alt="네이버클라우드, 'NH 퍼블릭 클라우드 표준 사업자' 선정… “금융권 클라우드 강자 재확인” 이미지">
+                                    <p>
+                                        네이버클라우드, "AI 디지털교과서 성공 위해 맞춤형 학습 가능한 혁신 기술 지원할 것"
+                                    </p>
+                                    <span>2024.10.17</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="box">
+                                    <img src="./img/png/20240927102708_1.png" width="100%" alt="네이버클라우드가 알려주는 ‘더 똑똑하게 일하는 법’, ‘오피스 구석 1열’ 토크쇼 개최 이미지">
+                                    <p>
+                                        “이제 업무용 번역 도구로 파파고를 활용해보세요” AI 번역 서비스 파파고, 비즈니스용 유료 구독형 버전 ‘파파고 플러스’ 출시
+                                    </p>
+                                    <span>2024.09.27</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="box">
+                                    <img src="./img/png/20240927100022_1.png" width="100%" alt="네이버클라우드-매직에코, 클라우드 기반의 ‘올인원 교육 서비스’ 함께 제공한다 이미지">
+                                    <p>
+                                        네이버클라우드 컨소시엄,  ‘AI반도체 Farm 구축 및 실증’ 2차년도 사업 순항
+                                    </p>
+                                    <span>2024.09.27</span>
+                                </div>
+                            </a>
+                        </li>
                 </ul>
                 <a href="">새로운 소식 더보기</a>
                 <ul class="bottom">
@@ -211,40 +298,39 @@
                     </li>
                 </ul>
             </div>
-
-        <!-- 하단영역 -->
-            <footer>
-                <div class="wrap">
-                    <h1>
-                        NAVER
-                        <span>Cloud</span>
-                    </h1>        
-                    <div class="affiliated">
-                        <a href="">관계사 바로가기</a>
-                    </div>
-                    <div class="company">
-                        <p>사업자등록번호 : 129-86-31394    통신판매업신고번호 : 제2009-경기성남-0510호
-                        <span class="block">대표이사 : 김유원    주소 : 경기도 성남시 분당구 정자동 불정로 6 NAVER 그린팩토리, 13561</span>
-                        </p>
-                        <p class="en">ⓒ NAVER Cloud Corp. All Rights Reserved.</p>
-                    </div>
-                    <div class="li">
-                        <div class="conditions">
-                            <a href="">기업윤리 상담센터</a>
-                            <a class="txt" href="">개인정보 처리방침</a>
-                        </div>
-                        <div class="sns">
-                            <a href="">네이버 블로그</a>
-                            <a href="">페이스북</a>
-                            <a href="">네이버TV</a>
-                            <a href="">유튜브</a>
-                            <a href="">미디엄</a>
-                            <a href="">링크드인</a>
-                        </div>
-                    </div>
+        </section>
+    </main>
+    <!-- 하단영역 -->
+    <footer>
+        <div class="wrap">
+            <h1>
+                NAVER
+                <span>Cloud</span>
+            </h1>        
+            <div class="affiliated">
+                <a href="">관계사 바로가기</a>
+            </div>
+            <div class="company">
+                <p>사업자등록번호 : 129-86-31394    통신판매업신고번호 : 제2009-경기성남-0510호
+                <span class="block">대표이사 : 김유원    주소 : 경기도 성남시 분당구 정자동 불정로 6 NAVER 그린팩토리, 13561</span>
+                </p>
+                <p class="en">ⓒ NAVER Cloud Corp. All Rights Reserved.</p>
+            </div>
+            <div class="li">
+                <div class="conditions">
+                    <a href="">기업윤리 상담센터</a>
+                    <a class="txt" href="">개인정보 처리방침</a>
                 </div>
-            </footer>
+                <div class="sns">
+                    <a href="">네이버 블로그</a>
+                    <a href="">페이스북</a>
+                    <a href="">네이버TV</a>
+                    <a href="">유튜브</a>
+                    <a href="">미디엄</a>
+                    <a href="">링크드인</a>
+                </div>
+            </div>
         </div>
-    </div>
+    </footer>
 </body>
 </html>
