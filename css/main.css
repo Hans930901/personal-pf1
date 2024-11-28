@@ -58,13 +58,16 @@ main{
   float: left;
 }
 #service .wrap .leftbox h2{
-  color: gray;
+  color: #aaa;
 }
 #service .wrap .leftbox h2 span{
   color: black;
 }
+#service .wrap .leftbox h2 span:nth-of-type(1){
+  color: #aaa;
+}
 #service .wrap .leftbox h2 span span{
-  color: gray;
+  color: #aaa;
 }
 #service .wrap .leftbox a {
   display: inline-block;
