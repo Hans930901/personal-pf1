@@ -1,0 +1,101 @@
+.navColor{
+  background-color: #fff;
+}
+header {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: transparent;
+  transition: 0.3s;
+}
+header > div{
+  padding: 30px 170px;
+}
+header > div::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+header h1 {
+  font-weight: bolder;
+  float: left;
+}
+header h1 a {
+  color: white;
+  font-size: 25px;
+}
+header > div > div{
+  float: right;
+}
+header nav {
+  float: left;
+}
+.navColor a{
+  color: #000;
+}
+.navColor .ham span{
+  background: #000;
+}
+nav ul {
+  display: flex;
+  margin-right: 80px;
+}
+nav li{
+  margin: 0 20px;
+}
+nav li:nth-of-type(n+4){
+  margin: 0 0 0 20px;
+}
+nav ul li a {
+  color: #fff;
+  transition: 0.3s;
+  line-height: 1.5;
+}
+.gnb li a i{
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  transition: 0.3s;
+  opacity: 0;
+  text-indent: -9999px;
+}
+.gnb li a:hover i{
+  background-image: url('../img/png/outlink_icon.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  line-height: 1.5;
+}
+.navColor .gnb li a{
+  color: #aaa;
+}
+header .gnb li a:hover {
+  color: #117ce9;
+}
+.enb{
+  float: right;
+}
+.enb li a{
+  display: block;
+  font-size: 0;
+  width: 24px;
+  height: 24px;
+  line-height: 100px;
+  background-image: url(../img/png/global_icon_w.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.navColor .enb li a{
+  background-image: url(../img/png/global_icon_b.png);
+}
+.enb li:hover a{
+  background-image: url(../img/png/global_icon_g.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,87 @@
+footer {  
+  height: auto;
+  margin-bottom: 4%;
+  background-color: #f9f9f9;
+  padding: 20px 0;
+}
+footer .wrap{
+  max-width: 1300px;
+}
+footer .wrap h2 {
+  font-weight: bolder;
+  font-size: 25px;
+  margin-bottom: 2%;
+}
+.shortcut {
+  position: relative;
+}
+.shortcut a {
+  background: #777;
+  padding: 14px;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 13px;
+  transition: 0.3s;
+  position: absolute;
+  right: 10px;
+  top: -60px;
+}
+.shortcut a:hover{
+  background: #000
+}
+.shortcut a::after{
+  content: "";
+  padding: 10px;
+  background-image: url(../img/png/footer_open.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-left: 5px;
+}
+footer address {  
+  color: #777;
+}
+footer address p {  
+  font-size: 12px;
+  line-height: 25px;
+  font-weight: 700;
+  font-style: initial;
+}
+footer address p span{
+  margin-right: 10px;
+}
+footer address p span span{
+  margin-right: 10px;
+}
+.conditions {
+  display: inline-block;
+  font-size: 14px;
+}
+.conditions a {
+  color: #777;
+  line-height: 5;
+  transition: 0.3s;
+}
+.conditions a:hover:nth-child(1){
+  color: #117ce9;
+}
+.conditions a:nth-last-child(1) {
+  text-decoration: underline;
+  color: #000;
+  margin-left: 20px;
+}
+.sns {
+  display: inline-block;
+  font-size: 14px;
+  margin-left: 80px;
+}
+.sns li {
+  display: inline-block;
+}
+.sns li a {  
+  color: #777;
+  margin-right: 30px;
+  transition: 0.3s;
+}
+.sns li a:hover{
+  color: #117ce9;
+}

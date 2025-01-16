@@ -1,0 +1,25 @@
+.ham {
+    display: none;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    right: 18px;
+    top: 16px;
+    z-index: 10;
+}
+.ham > span{
+    width: 20px;
+    height: 2px;
+    display: block;
+    background: #fff;
+    position: absolute;
+    top: 8px;
+    left: 6px;
+}
+.ham > span:nth-child(2){
+    top: 15px;
+}
+.ham > span:nth-child(3){
+    top: auto;
+    bottom: 8px;
+}
