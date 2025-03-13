@@ -12,7 +12,7 @@ $(function(){
     });
 });
 
-window.onload = function () {
+/*window.onload = function () {
 var elm = ".full";
 // 화면 크기 확인
 function handleResize() {
