@@ -95,10 +95,10 @@ $(elm).each(function (index) {
             }
         });
     });
-});
+});*/
 
 
 $(document).ready(function(){
     AOS.init();
     });
-}*/
+}
